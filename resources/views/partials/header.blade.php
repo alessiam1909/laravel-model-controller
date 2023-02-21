@@ -14,7 +14,7 @@
                 <ul>
                     @foreach($nav_menu as $elem)
                     <li>
-                        <a class="{{Route::currentRouteName() == 'homepage' ? 'active' : ''}}" href="{{$elem['url']}}">{{$elem['label']}}</a>
+                        <a class="{{Route::currentRouteName() == '#' ? 'active' : ''}}" href="{{$elem['url']}}">{{$elem['label']}}</a>
                     </li>
                     @endforeach
                 </ul>
