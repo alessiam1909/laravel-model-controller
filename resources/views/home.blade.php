@@ -7,9 +7,9 @@
     <div class="current-button">CURRENT SERIES</div>
     <div class="container-cards">
         <div class="row-fumetti">
-            @foreach ($fumetti as $key => $fumetto)
+            @foreach ($fumetti as $fumetto)
                 <div class="col-fumetto">
-                    <a href="{{ route('details_fumetto', ['id' => $key]) }}">
+                    <a href="{{ route('details_fumetto', ['id' => $fumetto['id']]) }}">
                         <div class="contenitore-img">
                             <img class="img-fumetto" src="{{$fumetto['thumb']}}" alt="{{$fumetto['title']}}">
                         </div>

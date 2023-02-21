@@ -16,17 +16,5 @@ use App\Http\Controllers\ComicController as ComicController;
 
 Route::get('/', [ComicController::class, 'getComic'])->name('home');
 
-Route::get('/home/{id}', function($id){
-    $fumetti = config('db.comics');
-    $icons  =config('db.social_icons');
-    $nav_menu = config('db.nav');
-    $single= '';
-    foreach($fumetti as $key => $fumetto){
-        if($key == $id){
-            $single = $fumetto;
-        }
-    }
+Route::get('/home/{id}', [ComicController::class, 'getSingleComic'])->name('details_fumetto');
 
-
-    return view('details_fumetto', compact('single', "icons", "nav_menu"));
-})->name('details_fumetto');
