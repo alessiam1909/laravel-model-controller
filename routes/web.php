@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComicController as ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $fumetti = config('db.comics');
-    $nav_menu = config('db.nav');
-    $icons  =config('db.social_icons');
-    return view('home', compact('fumetti', 'nav_menu', 'icons'));
-})->name('home');
+Route::get('/', [ComicController::class, 'getComic'])->name('home');
 
 Route::get('/home/{id}', function($id){
     $fumetti = config('db.comics');
