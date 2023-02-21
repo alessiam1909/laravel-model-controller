@@ -9,7 +9,7 @@
         <div class="row-fumetti">
             @foreach ($fumetti as $fumetto)
                 <div class="col-fumetto">
-                    <a href="{{ route('details_fumetto', ['id' => $fumetto['id']]) }}">
+                    <a href="{{ route('details_fumetto', ['slug' => $fumetto['slug']]) }}">
                         <div class="contenitore-img">
                             <img class="img-fumetto" src="{{$fumetto['thumb']}}" alt="{{$fumetto['title']}}">
                         </div>

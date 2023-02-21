@@ -16,5 +16,5 @@ use App\Http\Controllers\ComicController as ComicController;
 
 Route::get('/', [ComicController::class, 'getComic'])->name('home');
 
-Route::get('/home/{id}', [ComicController::class, 'getSingleComic'])->name('details_fumetto');
+Route::get('/home/{slug}', [ComicController::class, 'getComicBySlug'])->name('details_fumetto');
 
